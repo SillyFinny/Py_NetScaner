@@ -7,4 +7,4 @@ def scan(ip):
 	broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
 	arpbrodcast = broadcast/arp_request
 
-scan("192.168.43.130/24")
+scan("enter IP") # example 192.192.192.192/24
