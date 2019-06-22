@@ -12,4 +12,4 @@ def scan(ip):
 	for element in answered_list:
 		print(element[1].psrc + '\t\t' + element[1].hwsrc)
 	
-scan("192.168.1.143/24")
+scan("IP") #192.192.192.192.192/24
