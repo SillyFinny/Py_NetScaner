@@ -6,5 +6,10 @@ def scan(ip):
 	arp_request = scapy.ARP(pdst=ip)
 	broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
 	arpbrodcast = broadcast/arp_request
-
-scan("enter IP") # example 192.192.192.192/24
+	answered_list = scapy.srp(arpbrodcast, timeout=1, verbose=False)[0]
+	
+	print("IP\t\t\tMAC Address\n------------------------------------")
+	for element in answered_list:
+		print(element[1].psrc + '\t\t' + element[1].hwsrc)
+	
+scan("192.168.1.143/24")
